@@ -82,13 +82,15 @@ mkdir HITCS-partial
 cd HITCS-partial
 git init
 
-# 2. 添加远程仓库
+# 2. 添加远程仓库（本仓库的URL）
 git remote add origin https://github.com/HITLittleZheng/HITCS.git
 
 # 3. 启用稀疏检出
 git sparse-checkout init --cone
 
-# 4. 指定要下载的文件夹（以操作系统为例）
+# 4. 指定要下载的文件夹
+#    以下以"操作系统"为例，您可以替换成任何想下载的课程文件夹
+#    如："公共课程/计算机网络"、"人工智能/机器学习"等
 git sparse-checkout set "公共课程/操作系统"
 
 # 5. 拉取文件
@@ -97,6 +99,7 @@ git pull origin main
 
 如果想下载多个文件夹，可以在第4步指定多个路径：
 ```bash
+# 示例：同时下载操作系统和计算机网络两门课程的资料
 git sparse-checkout set "公共课程/操作系统" "公共课程/计算机网络"
 ```
 
