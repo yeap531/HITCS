@@ -68,6 +68,52 @@
 🤝 **同时也希望更多同学参与到本项目，旨在打破信息壁垒，减少同学对课程学习的不熟悉，帮助各位同学更好的找到合适的学习方法及资料，学长学姐们的经验也可以很大程度上帮助到学弟学妹们！**
 
 
+## :file_folder: 如何下载单个文件夹 | How to Download a Single Folder
+
+💾 **由于本仓库体积较大，如果您只想下载某一门课程的资料（如操作系统），可以使用以下方法：**
+
+### 方法一：使用稀疏检出（Sparse Checkout）- 推荐 ⭐
+
+这是 Git 官方支持的功能，可以只下载指定的文件夹：
+
+```bash
+# 1. 创建一个空文件夹并初始化 git
+mkdir HITCS-partial
+cd HITCS-partial
+git init
+
+# 2. 添加远程仓库
+git remote add origin https://github.com/HITLittleZheng/HITCS.git
+
+# 3. 启用稀疏检出
+git sparse-checkout init --cone
+
+# 4. 指定要下载的文件夹（以操作系统为例）
+git sparse-checkout set "公共课程/操作系统"
+
+# 5. 拉取文件
+git pull origin main
+```
+
+如果想下载多个文件夹，可以在第4步指定多个路径：
+```bash
+git sparse-checkout set "公共课程/操作系统" "公共课程/计算机网络"
+```
+
+### 方法二：使用 GitHub Web 界面直接下载
+
+1. 在 GitHub 网页上浏览到您想要的文件夹（如 `公共课程/操作系统`）
+2. 点击文件夹中的单个文件，点击 `Download` 按钮下载
+3. 或者使用浏览器扩展（如 GitZip）批量下载文件夹
+
+### 方法三：使用第三方工具
+
+**DownGit**：https://minhaskamal.github.io/DownGit/#/home
+1. 在 GitHub 上打开您想下载的文件夹
+2. 复制浏览器地址栏中的 URL
+3. 粘贴到 DownGit 网站中，点击 Download
+
+**注意**：第三方工具仅供参考，请注意数据安全。
 
 ## :raised_hands: 贡献 | Contribution
 
